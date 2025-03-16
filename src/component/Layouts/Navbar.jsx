@@ -1,53 +1,23 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/logo.png";
 import Button from "../Shared/Button";
-import axios from "axios";
 import { LuMenu } from "react-icons/lu";
 import { AiOutlineClose } from "react-icons/ai";
 import ArrowDown from "../Shared/ArrowDown";
 import Dropdown from "../Shared/Dropdown";
 import CartIcon from "../Shared/CartIcon";
 import SocialIcon from "../Shared/SocialIcon";
+import useCategories from "../../utils/useCategories";
+import useProducts from "../../utils/useProducts";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
   const [isOpenForProduct, setIsOpenForProduct] = useState(false);
-  const [topProducts, setTopProducts] = useState([]);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  useEffect(() => {
-    const getCategories = async () => {
-      if (isOpen && categories.length === 0) {
-        try {
-          const response = await axios.get(
-            "http://localhost:8080/api/v1/category"
-          );
-          setCategories(response.data);
-        } catch (error) {
-          console.error("Error fetching categories:", error);
-        }
-      }
-    };
-    getCategories();
-  }, [isOpen, categories]);
-
-  useEffect(() => {
-    const getTopProducts = async () => {
-      if (isOpenForProduct && topProducts.length === 0) {
-        try {
-          const response = await axios.get(
-            "http://localhost:8080/api/v1/product"
-          );
-          setTopProducts(response.data);
-        } catch (error) {
-          console.error("Error fetching products:", error);
-        }
-      }
-    };
-    getTopProducts();
-  }, [isOpenForProduct]);
+  const { categories } = useCategories();
+  const { products } = useProducts();
 
   useEffect(() => {
     const changeNavbarbg = () => {
@@ -126,7 +96,7 @@ const Navbar = () => {
                     className="text-[16px] md:pl-[22px] pl-[32px] lg:pl-[32px] flex justify-normal items-center gap-[6px] relative"
                     onClick={handleProductToggle}>
                     Top Products <ArrowDown isOpen={isOpenForProduct} />
-                    {isOpenForProduct && <Dropdown options={topProducts} />}
+                    {isOpenForProduct && <Dropdown options={products} />}
                   </li>
                   <li className="text-[16px] pl-[44px] lg:pl-[44px] md:pl-[22px]">
                     Contact Us
@@ -172,7 +142,7 @@ const Navbar = () => {
                   className="text-[16px] flex justify-normal items-center gap-[6px] relative"
                   onClick={handleProductToggle}>
                   Top Products <ArrowDown isOpen={isOpenForProduct} />
-                  {isOpenForProduct && <Dropdown options={topProducts} />}
+                  {isOpenForProduct && <Dropdown options={products} />}
                 </li>
                 <li className="text-[16px]">Contact Us</li>
                 <li className="text-[16px]">FAQs</li>

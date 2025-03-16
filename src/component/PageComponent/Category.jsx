@@ -1,27 +1,13 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SupportSection from "./SupportSection";
 import ProductSection from "./ProductSection";
 import AddSection from "./AddSection";
+import useCategories from "../../utils/useCategories";
+import Loader from "../Shared/Loader";
 
 const Category = () => {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const getCategories = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:8080/api/v1/category"
-        );
-        setCategories(response.data);
-        console.log(response?.data);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-    getCategories();
-  }, []);
+  const { categories, loading } = useCategories();
 
   return (
     <div className="category_section">
@@ -32,36 +18,40 @@ const Category = () => {
           </p>
         </div>
         <div className="container">
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-            gutterBreakpoints={{ 350: "12px", 750: "16px", 900: "30px" }}>
-            <Masonry>
-              {categories.map((category, i) => {
-                console.log("ca", category);
-                return (
-                  <div
-                    key={i}
-                    className="category-item w-[370px] relative mt-[15px]">
-                    <p
-                      className={`text-[36px] font-medium font-neueMontreal absolute top-[24px] z-10 left-[24px] ${
-                        i === 3 || i === 4 || i === 5
-                          ? "w-[217px]"
-                          : "w-[154px]"
-                      } text-wrap leading-[120%]`}>
-                      {category.name}
-                    </p>
+          {loading ? (
+            <Loader />
+          ) : (
+            <ResponsiveMasonry
+              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+              gutterBreakpoints={{ 350: "12px", 750: "16px", 900: "30px" }}>
+              <Masonry>
+                {categories.map((category, i) => {
+                  console.log("ca", category);
+                  return (
+                    <div
+                      key={i}
+                      className="category-item w-[370px] relative mt-[15px]">
+                      <p
+                        className={`text-[36px] font-medium font-neueMontreal absolute top-[24px] z-10 left-[24px] ${
+                          i === 3 || i === 4 || i === 5
+                            ? "w-[217px]"
+                            : "w-[154px]"
+                        } text-wrap leading-[120%]`}>
+                        {category.name}
+                      </p>
 
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      style={{ width: "100%", display: "block" }}
-                      className="relative"
-                    />
-                  </div>
-                );
-              })}
-            </Masonry>
-          </ResponsiveMasonry>
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        style={{ width: "100%", display: "block" }}
+                        className="relative"
+                      />
+                    </div>
+                  );
+                })}
+              </Masonry>
+            </ResponsiveMasonry>
+          )}
         </div>
         <SupportSection />
         <ProductSection />

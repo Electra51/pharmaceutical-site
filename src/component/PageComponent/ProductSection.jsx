@@ -1,29 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import axios from "axios";
 import cartIcon from "../../assets/images/Icon-dashboard.svg";
+import useProducts from "../../utils/useProducts";
+import Loader from "../Shared/Loader";
+
 const ProductSection = () => {
   const swiperRef = useRef(null);
-  const [products, setProducts] = useState([]);
+  const { products, loading } = useProducts();
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:8080/api/v1/product"
-        );
-        setProducts(response.data);
-        console.log(response?.data);
-      } catch (error) {
-        console.error("Error fetching Products:", error);
-      }
-    };
-    getProducts();
-  }, []);
   return (
     <div className="mt-[153px] relative">
       <div className="container mb-[45px]">
@@ -77,56 +65,62 @@ const ProductSection = () => {
           <IoArrowForward className="w-6 h-6 text-white" />
         </button>
       </div>
-      <div className="container grid grid-cols-4 gap-[30px]">
-        {products?.map((product, index) => {
-          return (
-            <div
-              className="w-[270px] h-[262px] border bg-[#31418C4D] rounded-[12px] relative"
-              //   style={{
-              //     backgroundImage: `url(${product.image})`,
-              //     backgroundRepeat: "no-repeat",
-              //     backgroundSize: "contain",
-              //       }}
-            >
-              <div className="flex justify-center items-center gap-[24px] mt-6">
+      <div className="container">
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className=" grid grid-cols-4 gap-[30px]">
+            {products?.map((product, index) => {
+              return (
                 <div
-                  className="w-[113px] h-[28px] rounded-tr-[12px] rounded-bl-[12px] absolute right-0 top-0 text-[13px] text-white font-normal font-neueMontreal text-center flex justify-center items-center"
-                  style={{
-                    background:
-                      "linear-gradient(268.79deg, #A75356 1.04%, #D78C6C 98.57%)",
-                  }}>
-                  {product?.status}
-                </div>
-                <div className="w-[70px] h-[157px] ">
-                  <img
-                    src={product?.image}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />{" "}
-                </div>
+                  className="w-[270px] h-[262px] border bg-[#31418C4D] rounded-[12px] relative"
+                  //   style={{
+                  //     backgroundImage: `url(${product.image})`,
+                  //     backgroundRepeat: "no-repeat",
+                  //     backgroundSize: "contain",
+                  //       }}
+                >
+                  <div className="flex justify-center items-center gap-[24px] mt-6">
+                    <div
+                      className="w-[113px] h-[28px] rounded-tr-[12px] rounded-bl-[12px] absolute right-0 top-0 text-[13px] text-white font-normal font-neueMontreal text-center flex justify-center items-center"
+                      style={{
+                        background:
+                          "linear-gradient(268.79deg, #A75356 1.04%, #D78C6C 98.57%)",
+                      }}>
+                      {product?.status}
+                    </div>
+                    <div className="w-[70px] h-[157px] ">
+                      <img
+                        src={product?.image}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />{" "}
+                    </div>
 
-                <p className="text-gold-gradient-1 text-[18px] font-neueMontreal w-[120px]">
-                  {product?.product_name}
-                </p>
-              </div>
-              <div className="w-[270px] h-[65px] rounded-b-[12px] absolute bottom-0 left-0 bg-[#1F1F1F4D]">
-                <p className="text-[12px] font-normal font-neueMontreal text-white w-[151px] flex justify-center items-center h-[65px]">
-                  {" "}
-                  {product?.price}
-                </p>
-              </div>
+                    <p className="text-gold-gradient-1 text-[18px] font-neueMontreal w-[120px]">
+                      {product?.product_name}
+                    </p>
+                  </div>
+                  <div className="w-[270px] h-[65px] rounded-b-[12px] absolute bottom-0 left-0 bg-[#1F1F1F4D]">
+                    <p className="text-[12px] font-normal font-neueMontreal text-white w-[151px] flex justify-center items-center h-[65px]">
+                      {" "}
+                      {product?.price}
+                    </p>
+                  </div>
 
-              <div
-                className="w-[87px] h-[65px] rounded-br-[12px] flex justify-center items-center absolute bottom-0 right-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #C1842D 0%, #ECC974 100%)",
-                }}>
-                <img src={cartIcon} alt="" width={24} />
-              </div>
-            </div>
-          );
-        })}
+                  <div
+                    className="w-[87px] h-[65px] rounded-br-[12px] flex justify-center items-center absolute bottom-0 right-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #C1842D 0%, #ECC974 100%)",
+                    }}>
+                    <img src={cartIcon} alt="" width={24} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
       <div className="mt-[50px] flex justify-center items-center gap-[32px]">
         <div className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center">

@@ -13,6 +13,11 @@
   transition: all 0.3s;
 }
 
+.right-nav {
+  height: 139px;
+  display: none;
+}
+
 @media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .navbar {
     padding: 10px 0;
@@ -21,6 +26,16 @@
   .logo {
     max-width: 57px;
     height: 72px;
+  }
+  .right-nav {
+    height: 72px;
+    display: flex;
+  }
+  .right-nav-part {
+    display: none;
+  }
+  .right-nav-part-mobile {
+    visibility: visible;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 992px) {

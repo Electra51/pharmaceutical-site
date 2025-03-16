@@ -1,0 +1,28 @@
+.category_section {
+  background-position: top center;
+  background-repeat: repeat-y;
+  padding-top: 199px;
+  background-image: url("../src/assets/images/bg_artwork (2).png");
+  background-size: 3000px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 2524px;
+}
+
+.category-content {
+  margin-top: -417px; /* 490-73=417  */
+  padding-bottom: 160px;
+}
+
+@media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .category-content {
+    margin-top: -487px;
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .category-content {
+    margin-top: -588px; /* 647-60=588px  */
+    padding-bottom: 160px;
+  }
+}

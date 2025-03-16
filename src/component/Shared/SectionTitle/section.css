@@ -1,0 +1,13 @@
+.section_title {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .section_title {
+    font-size: 36px;
+  }
+}

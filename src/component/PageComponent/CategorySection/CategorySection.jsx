@@ -3,7 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Loader from "../../Shared/Loader";
 import useCategories from "../../../utils/useCategories";
 import SupportSection from "../SupportSection";
-import ProductSection from "../ProductSection";
+import ProductSection from "../ProductSection/ProductSection";
 import AddSection from "../AddSection";
 import "./category.css";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
@@ -56,8 +56,8 @@ const CategorySection = () => {
         </div>
 
         <SupportSection />
-        {/* <ProductSection />
-        <AddSection /> */}
+        <ProductSection />
+        <AddSection />
       </div>
     </div>
   );

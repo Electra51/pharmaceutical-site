@@ -14,6 +14,10 @@
   font-family: impact;
   src: url("../src/assets/fonts/impact.ttf");
 }
+@font-face {
+  font-family: "SofiaPro";
+  src: url("../src/assets/fonts/SofiaProRegularAz.otf");
+}
 
 @import "tailwindcss";
 @plugin "daisyui";
@@ -21,6 +25,7 @@
 @theme {
   --font-neueMontreal: "NeueMontreal", sans-serif;
   --font-impact: impact, "sans-serif";
+  --font-SofiaPro: SofiaPro, "sans-serif";
   --color-black: #1f1f1f;
   --color-white: #faf8f2;
 }
@@ -176,4 +181,16 @@ body {
 .a:hover::after,
 .a:active::after {
   width: 70%;
+}
+
+.border_status {
+  border-width: 0px, 0px, 0.5px, 0.5px;
+
+  border-style: solid;
+
+  border-image-source: linear-gradient(
+    268.79deg,
+    #a75356 1.04%,
+    #d78c6c 98.57%
+  ) !important;
 }

@@ -5,7 +5,7 @@ import ArrowFill from "../../assets/images/arrowFill.svg";
 const AddSection = () => {
   return (
     <div
-      className="!h-[812px] w-full mt-[160px] border !z-10 !absolute"
+      className="!h-[812px] w-full mt-[160px] !z-10 !absolute"
       style={{
         backgroundImage: `url(${BGImg})`,
         backgroundSize: "cover",

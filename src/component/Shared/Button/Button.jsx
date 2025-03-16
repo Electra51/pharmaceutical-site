@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./button.css";
 const Button = ({ text, height, width, type, onClick }) => {
   return (
     <button
@@ -12,7 +12,7 @@ const Button = ({ text, height, width, type, onClick }) => {
       }}
       className={`${
         type == "fill"
-          ? "bg-[#E1C06E] text-buttonText signUp-btn gradient-border"
+          ? "bg-[#E1C06E] text-black signUp-btn gradient-border"
           : "draw-border"
       } rounded-[50px] text-center text-[16px] font-neueMontreal `}
       onClick={onClick}>

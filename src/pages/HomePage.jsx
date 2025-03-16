@@ -8,9 +8,9 @@ import LastSection from "../component/PageComponent/LastSection";
 const HomePage = () => {
   return (
     <div className="h-[100vh]">
-      <Hero />
-      <Category />
-      <LastSection />
+      {/* <Hero /> */}
+      {/* <Category /> */}
+      {/* <LastSection /> */}
       {/* <HHoo /> */}
     </div>
   );

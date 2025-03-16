@@ -1,19 +1,15 @@
-/* @font-face {
-  font-family: NeueMontreal;
-  src: url("../src/assets/fonts/NeueMontreal-Regular.otf");
-  src: url("../src/assets/fonts/NeueMontreal-Medium.otf");
-} */
 @font-face {
   font-family: "NeueMontreal";
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   src: url("../src/assets/fonts/NeueMontreal-Regular.otf");
 }
 
 @font-face {
   font-family: "NeueMontreal";
-  font-weight: 500; /* Medium */
+  font-weight: 500;
   src: url("../src/assets/fonts/NeueMontreal-Medium.otf");
 }
+
 @font-face {
   font-family: impact;
   src: url("../src/assets/fonts/impact.ttf");
@@ -25,13 +21,13 @@
 @theme {
   --font-neueMontreal: "NeueMontreal", sans-serif;
   --font-impact: impact, "sans-serif";
-  --color-buttonText: #1f1f1f;
+  --color-black: #1f1f1f;
   --color-white: #faf8f2;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(250, 248, 242, 0.3) #283675;
+  scrollbar-color: rgba(250, 248, 242, 0.3) #753e28;
 }
 
 body {
@@ -44,7 +40,6 @@ body {
   min-height: 6447px;
   background-position: top center;
   margin: 0px;
-  /* background-image: url("../src/assets/images/Homepage.png") !important; */
 }
 
 .container {
@@ -53,88 +48,7 @@ body {
   margin: 0 auto;
   padding: 0;
 }
-.gradient-border {
-  position: relative;
-  border-radius: 50px;
-  padding: 10px;
-  background: #e1c06e;
-}
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(180deg, #c1842d 0%, #ecc974 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  text-align: center;
-}
-.signUp-btn:hover,
-.signUp-btn:focus {
-  background: linear-gradient(180deg, #c1842d 0%, #ecc974 100%);
-}
 
-.draw-border {
-  box-shadow: inset 0 0 0 1px #faf8f2;
-  color: #faf8f2;
-  transition: color 0.25s 0.083s;
-  position: relative;
-}
-
-.draw-border::before,
-.draw-border::after {
-  border: 0 solid transparent;
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.draw-border::before {
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-radius: 50px;
-}
-
-.draw-border::after {
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-radius: 50px;
-}
-
-.draw-border:hover {
-  color: #ffe593;
-}
-
-.draw-border:hover::before,
-.draw-border:hover::after {
-  border-color: #ffe593;
-  border-radius: 50px;
-  transition: border-color 0s, width 0.25s, height 0.25s;
-  width: 100%;
-  height: 100%;
-}
-
-.navbar {
-  padding: 30px 0 10px;
-  transition: 0.3s;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
-.logo {
-  max-width: 111px;
-  height: 139px;
-  transition: all 0.3s;
-}
 .right-nav {
   height: 139px;
   display: none;
@@ -143,7 +57,6 @@ body {
   padding-top: 229px;
 
   background-size: 3000px;
-  /* width: 3000px; */
 
   background-position: top center;
   background-repeat: no-repeat;
@@ -309,19 +222,12 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .navbar {
-    padding: 10px 0;
-    width: 100vw;
-  }
   .container {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
   }
-  .logo {
-    max-width: 57px;
-    height: 72px;
-  }
+
   .right-nav {
     height: 72px;
     display: flex;
@@ -339,28 +245,17 @@ body {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-  .navbar {
-    padding: 10px 0;
-    width: 100vw;
-  }
-  .logo {
-    max-width: 80px;
-  }
   .hero {
     min-height: 1100px;
     background-position: 60% top;
     background-size: 2300px;
   }
 }
-@media only screen and (min-width: 993px) and (max-width: 1200px) {
-  .navbar {
-    padding: 15px 0;
-    width: 100vw;
-  }
+@media only screen and (min-width: 993px) and (max-width: 1290px) {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1290px) {
 }
 
 .swiper {
@@ -395,31 +290,22 @@ body {
   display: none !important;
   /* left: 10px; */
 }
-
-/* .bg-container {
+.a {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url("../src/assets/images/1k_Dissolve_Noise_Texture1.png")
-      center/cover no-repeat,
-    #344261;
-  background-blend-mode: overlay;
 }
-
-.bg-container::before {
-  content: "";
+.a::after {
+  content: " ";
+  width: 0;
+  height: 2px;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(69px);
-  z-index: 1;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.4s;
 }
-.content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  padding: 50px;
-} */
+
+.a:hover::after,
+.a:active::after {
+  width: 70%;
+}

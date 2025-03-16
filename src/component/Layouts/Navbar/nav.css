@@ -1,0 +1,52 @@
+.navbar {
+  padding: 30px 0 0;
+  transition: 0.3s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  max-width: 111px;
+  height: 139px;
+  transition: all 0.3s;
+}
+
+@media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .navbar {
+    padding: 10px 0;
+    width: 100vw;
+  }
+  .logo {
+    max-width: 57px;
+    height: 72px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .navbar {
+    padding: 10px 0;
+    width: 100vw;
+  }
+  .logo {
+    max-width: 80px;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1290px) {
+  .navbar {
+    padding: 15px 0;
+    width: 100vw;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1290px) {
+  .navbar {
+    padding: 30px 0 0;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}

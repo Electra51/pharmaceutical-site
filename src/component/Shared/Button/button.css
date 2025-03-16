@@ -1,0 +1,68 @@
+.gradient-border {
+  position: relative;
+  border-radius: 50px;
+  padding: 10px;
+  background: #e1c06e;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, #c1842d 0%, #ecc974 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  text-align: center;
+}
+.signUp-btn:hover,
+.signUp-btn:focus {
+  background: linear-gradient(180deg, #c1842d 0%, #ecc974 100%);
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 1px #faf8f2;
+  color: #faf8f2;
+  transition: color 0.25s 0.083s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-radius: 50px;
+}
+
+.draw-border::after {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-radius: 50px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #ffe593;
+  border-radius: 50px;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}

@@ -37,8 +37,10 @@ const Navbar = () => {
     const getTopProducts = async () => {
       if (isOpenForProduct && topProducts.length === 0) {
         try {
-          const response = await axios.get("https://dummyjson.com/products");
-          setTopProducts(response.data.products);
+          const response = await axios.get(
+            "http://localhost:8080/api/v1/product"
+          );
+          setTopProducts(response.data);
         } catch (error) {
           console.error("Error fetching products:", error);
         }

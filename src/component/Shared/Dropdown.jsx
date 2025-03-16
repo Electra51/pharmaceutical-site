@@ -12,7 +12,7 @@ const Dropdown = ({ options, type }) => {
                 index == 0 ? "rounded-t-lg" : index == 5 ? "rounded-b-lg" : ""
               }`}
               key={index}>
-              {type == "c" ? option.name : option.title}
+              {type == "c" ? option.name : option.product_name}
             </li>
           );
         })

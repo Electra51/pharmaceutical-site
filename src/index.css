@@ -238,7 +238,7 @@ body {
   background-size: 3000px;
   background-position: top center;
   background-repeat: no-repeat;
-  min-height: 3333px;
+  min-height: 2524px;
 }
 .category_section {
   background-image: url("../src/assets/images/bg_artwork (2).png") !important;
@@ -262,6 +262,23 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.last_section {
+  margin-top: 70px !important;
+  background-position: top center;
+  /* background-repeat: repeat-y; */
+
+  /* background-image: url("../src/assets/images/Hero.png"); */
+  background-size: 3000px;
+  /* background-position: top center; */
+  background-repeat: no-repeat;
+  min-height: 2524px;
+}
+.last_section {
+  background-image: url("../src/assets/images/bg_artwork (2).png") !important;
+  /* background-size: contain; */
+}
+
 .scroll-to-top {
   background-color: #86371c !important;
   display: flex !important;
@@ -334,3 +351,64 @@ body {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  display: none !important;
+  /* left: 10px; */
+}
+
+/* .bg-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../src/assets/images/1k_Dissolve_Noise_Texture1.png")
+      center/cover no-repeat,
+    #344261;
+  background-blend-mode: overlay;
+}
+
+.bg-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(69px);
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 50px;
+} */

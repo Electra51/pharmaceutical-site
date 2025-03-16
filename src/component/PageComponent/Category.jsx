@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import SupportSection from "./SupportSection";
+import ProductSection from "./ProductSection";
+import AddSection from "./AddSection";
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
@@ -62,6 +64,8 @@ const Category = () => {
           </ResponsiveMasonry>
         </div>
         <SupportSection />
+        <ProductSection />
+        <AddSection />
       </div>
     </div>
   );

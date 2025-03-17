@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import cartIcon from "../../assets/images/Icon-dashboard.svg";
+import { CartContext } from "../../context/CartContext";
+
 const ProductCard = ({ product }) => {
+  const { addToCart } = useContext(CartContext);
   return (
     <div className="w-[270px] h-[262px] bg-[#31418C4D] rounded-[12px] relative">
       <div className="flex justify-center items-center gap-[24px] mt-6">
@@ -49,7 +52,8 @@ const ProductCard = ({ product }) => {
         className="w-[87px] h-[65px] rounded-br-[12px] flex justify-center items-center absolute bottom-0 right-0"
         style={{
           background: "linear-gradient(180deg, #C1842D 0%, #ECC974 100%)",
-        }}>
+        }}
+        onClick={() => addToCart(product)}>
         <img src={cartIcon} alt="" width={24} />
       </div>
     </div>

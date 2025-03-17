@@ -4,9 +4,9 @@ import Loader from "../../Shared/Loader";
 import useCategories from "../../../utils/useCategories";
 import SupportSection from "../SupportSection";
 import ProductSection from "../ProductSection/ProductSection";
-import AddSection from "../AddSection";
 import "./category.css";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import AddSection from "../AddSection/AddSection";
 
 const CategorySection = () => {
   const { categories, loading } = useCategories();

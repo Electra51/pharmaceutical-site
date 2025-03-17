@@ -61,22 +61,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.last_section {
-  margin-top: 70px !important;
-  background-position: top center;
-  /* background-repeat: repeat-y; */
-
-  /* background-image: url("../src/assets/images/Hero.png"); */
-  background-size: 3000px;
-  /* background-position: top center; */
-  background-repeat: no-repeat;
-  min-height: 2524px;
-}
-.last_section {
-  background-image: url("../src/assets/images/bg_artwork (2).png") !important;
-  /* background-size: contain; */
-}
-
 .scroll-to-top {
   background-color: #e1c06e !important;
   display: flex !important;
@@ -131,38 +115,6 @@ body {
 @media only screen and (min-width: 1290px) {
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* background: #fff; */
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-pagination {
-  position: absolute;
-  text-align: center;
-  transition: 300ms opacity;
-  transform: translate3d(0, 0, 0);
-  z-index: 10;
-  display: none !important;
-  /* left: 10px; */
-}
 .a {
   position: relative;
 }

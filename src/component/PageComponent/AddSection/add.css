@@ -1,0 +1,25 @@
+.add_section {
+  /* padding-top: 229px; */
+  background-image: url("../../../assets/images/BG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 812px;
+}
+/* .add_section {
+  background-image: url("../../../assets/images/BG.png");
+  background-size: contain;
+  background-position: center, 40% 10%;
+  background-origin: content-box, padding-box;
+} */
+
+@media only screen and (max-width: 480px) {
+}
+@media only screen and (max-width: 640px) {
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 1024px) {
+}
+@media only screen and (max-width: 1280px) {
+}

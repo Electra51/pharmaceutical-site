@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import "./hero.css";
+import SearchItemSection from "../SearchItemSection/SearchItemSection";
+import useProducts from "../../../utils/useProducts";
 
 const HeroSection = () => {
+  const { products, loading } = useProducts();
+  console.log("products", products);
+  const [query, setQuery] = useState(""); // To store the search query
+  const [filteredItems, setFilteredItems] = useState(products); // To store filtered items based on query
+
+  const handleSearch = (e) => {
+    const searchQuery = e.target.value;
+    setQuery(searchQuery);
+
+    // Filter items based on the query
+    if (searchQuery.trim()) {
+      const filtered = products.filter((item) =>
+        item.product_name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredItems(filtered);
+    } else {
+      setFilteredItems(""); // Reset if search query is empty
+    }
+  };
+
+  console.log("filteredItems", filteredItems);
   return (
     <div className="hero_section">
       <div className="container">
@@ -25,12 +48,19 @@ const HeroSection = () => {
               type="search"
               className="search_input placeholder:text-white"
               placeholder="Search by product/treatment"
+              value={query}
+              onChange={handleSearch} // Update the query on input change
             />
             <div className="search_icon">
               <IoSearch className="text-2xl" />
             </div>
           </div>
         </div>
+        {filteredItems.length > 0 ? (
+          <SearchItemSection items={filteredItems} />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

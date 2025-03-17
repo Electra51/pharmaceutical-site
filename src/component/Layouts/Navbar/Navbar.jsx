@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../../assets/images/logo.png";
 import { LuMenu } from "react-icons/lu";
 import { AiOutlineClose } from "react-icons/ai";
@@ -11,8 +11,10 @@ import useProducts from "../../../utils/useProducts";
 import { NavLink } from "react-router";
 import "./nav.css";
 import Button from "../../Shared/Button/Button";
+import { CartContext } from "../../../context/CartContext";
 
 const Navbar = () => {
+  const { cart } = useContext(CartContext);
   const [navbar, setNavbar] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenForProduct, setIsOpenForProduct] = useState(false);
@@ -131,7 +133,7 @@ const Navbar = () => {
                   height={35}
                   width={77}
                 />
-                <CartIcon />
+                <CartIcon cartItemCount={cart?.length} />
               </div>
             </div>
           </div>

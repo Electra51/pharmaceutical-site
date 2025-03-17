@@ -13,15 +13,31 @@ import useCategories from "../../../utils/useCategories";
 
 const ProductSection = () => {
   const swiperRef = useRef(null);
+  const [visibleCount, setVisibleCount] = useState(8);
   const { products, loading } = useProducts();
   const { categories } = useCategories();
   console.log("categories", categories[0]?.name);
   const [selectedCategory, setSelectedCategory] = useState("All");
-
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const filteredProducts =
     selectedCategory === "All"
       ? products
       : products.filter((product) => product.category === selectedCategory);
+  // First 8 products
+  const firstEightProducts = filteredProducts.slice(0, 8);
+  // Remaining products
+  const remainingProducts = filteredProducts.slice(8);
+
+  const handleShowMore = () => {
+    setShowMore(true);
+  };
+
+  const handleShowLess = () => {
+    setShowMore(false);
+  };
+
   return (
     <div className="mt-[153px] relative">
       <div className="container">
@@ -31,16 +47,32 @@ const ProductSection = () => {
           extraText={"Health Goals"}
         />
         <div className="relative pr-12 !mb-[66px] mt-[45px]">
-          <div className="w-[375px] md:w-[500px] lg:w-[1072px]">
+          {!isBeginning && (
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="absolute top-1/2 left-0 z-10 transform -translate-y-1/2 shadow-md hover:bg-[#E1C06E] transition h-[65px] w-[86px] rounded-[100px] border flex justify-center items-center text-[20px] font-neueMontreal">
+              <IoArrowBack className="w-6 h-6 text-white" />
+            </button>
+          )}
+          <div className="product_swiper_container mx-auto">
             <Swiper
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                setIsBeginning(swiper.isBeginning);
+                setIsEnd(swiper.isEnd);
+              }}
+              onSlideChange={(swiper) => {
+                setIsBeginning(swiper.isBeginning);
+                setIsEnd(swiper.isEnd);
+              }}
               slidesPerView={1}
               spaceBetween={10}
               pagination={{ clickable: true }}
               breakpoints={{
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                768: { slidesPerView: 4, spaceBetween: 40 },
+                640: { slidesPerView: 3, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 40 },
                 1024: { slidesPerView: 5, spaceBetween: 50 },
+                1094: { slidesPerView: 3, spaceBetween: 50 },
               }}
               modules={[Pagination]}
               className="mySwiper">
@@ -88,30 +120,76 @@ const ProductSection = () => {
 
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="absolute top-1/2 right-0 z-10 transform -translate-y-1/2  shadow-md hover:bg-[#E1C06E] transition h-[65px] w-[86px] rounded-[100px] border flex justify-center items-center text-[20px] font-neueMontreal">
+            className={`absolute top-1/2 right-0 z-10 transform -translate-y-1/2 shadow-md hover:bg-[#E1C06E] transition h-[65px] w-[86px] rounded-[100px] border flex justify-center items-center text-[20px] font-neueMontreal `}>
             <IoArrowForward className="w-6 h-6 text-white" />
           </button>
         </div>
-        <div className="">
+        {/* <div className="">
           {loading ? (
             <Loader />
           ) : (
             <div className="product_sec gap-[30px]">
-              {filteredProducts?.map((product, index) => {
+              {filteredProducts.slice(0, visibleCount).map((product, index) => {
                 return <ProductCard product={product} key={index} />;
               })}
             </div>
           )}
         </div>
+      </div> */}
+        <div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div className="product_sec gap-[30px]">
+              {showMore
+                ? remainingProducts.map((product, index) => (
+                    <ProductCard product={product} key={index} />
+                  ))
+                : firstEightProducts.map((product, index) => (
+                    <ProductCard product={product} key={index} />
+                  ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+      {/* <div className="mt-[50px] flex justify-center items-center gap-[32px]">
         <div className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center">
           <IoArrowBack className="text-[24px] text-black" />
         </div>
         <div className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center">
           <IoArrowForward className="text-[24px] text-black" />
         </div>
+      </div> */}
+      {/* Toggle Buttons */}
+      <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+        {!showMore ? (
+          <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+            <div className="w-[60px] h-[60px] rounded-full border border-[#E1C06E] flex justify-center items-center cursor-pointer">
+              <IoArrowBack className="text-[24px] text-[#E1C06E]" />
+            </div>
+
+            <button
+              onClick={handleShowMore}
+              className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center cursor-pointer">
+              <IoArrowForward className="text-[24px] text-black" />
+            </button>
+          </div>
+        ) : (
+          <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+            <button
+              onClick={handleShowLess}
+              className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center cursor-pointer">
+              <IoArrowBack className="text-[24px] text-black" />
+            </button>
+
+            <button
+              onClick={handleShowMore}
+              className="w-[60px] h-[60px] rounded-full border border-[#E1C06E] flex justify-center cursor-pointer items-center">
+              <IoArrowForward className="text-[24px] text-[#E1C06E]" />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

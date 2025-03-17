@@ -23,7 +23,7 @@ const HHoo = () => {
         imageFormData.append("image", image);
 
         const imageUploadResponse = await axios.post(
-          `http://localhost:8080/api/v1/upload-image`,
+          `https://pharmaceutical-site-api.vercel.app/api/v1/upload-image`,
           imageFormData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -35,7 +35,7 @@ const HHoo = () => {
       const categoryData = { ...value, image: imageUrl };
 
       await axios.post(
-        `http://localhost:8080/api/v1/product-add`,
+        `https://pharmaceutical-site-api.vercel.app/api/v1/product-add`,
         categoryData
       );
 
@@ -58,7 +58,7 @@ const HHoo = () => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="p-4 border rounded-md w-96 space-y-4">
+        className="p-4 border rounded-md w-96 space-y-4 bg-black">
         <input
           type="text"
           placeholder="Name"

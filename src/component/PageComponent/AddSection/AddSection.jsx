@@ -1,25 +1,23 @@
 import React from "react";
-import BGImg from "../../assets/images/BG.png";
-import ArrowFill from "../../assets/images/arrowFill.svg";
-
+import BGImg from "../../../assets/images/BG.png";
+import "./add.css";
 const AddSection = () => {
   return (
     <div
-      className="!h-[812px] w-full mt-[160px] !z-10 !absolute"
+      className="!h-[812px] w-full mt-[160px] !z-10 !absolute add_section"
       style={{
         backgroundImage: `url(${BGImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}>
-      <div className="container grid grid-cols-2 !pt-[89px]">
-        <div className="w-[524px]">
-          <p className="text-[58px] font-impact leading-[120%]">
-            100% Online, <br /> 100% Convenient
-          </p>
-        </div>
-        <div>
-          <div className="flex justify-start items-center gap-[30px]">
+      <div className="container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:justify-items-center !pt-[89px] gap-[40px] md:gap-0">
+        <p className="text-[30px] md:text-[48px] lg:text-[58px] font-impact leading-[120%]w-[200px] md:w-[513px] lg:w-[524px]">
+          100% Online, <br /> 100% Convenient
+        </p>
+
+        <div className="">
+          <div className="flex justify-start items-center md:gap-[20px] gap-[10px] lg:gap-[30px]">
             <svg
               width="18"
               height="19"
@@ -32,7 +30,7 @@ const AddSection = () => {
               Chat with a provider 24/7
             </p>
           </div>
-          <div className="flex justify-start items-center gap-[30px] my-[25px]">
+          <div className="flex justify-start items-center md:gap-[20px] gap-[10px] lg:gap-[30px] my-[25px]">
             <svg
               width="18"
               height="19"
@@ -45,7 +43,7 @@ const AddSection = () => {
               Fast, discreet shipping
             </p>
           </div>
-          <div className="flex justify-start items-center gap-[30px]">
+          <div className="flex justify-start md:items-start lg:items-center md:gap-[20px] gap-[10px] lg:gap-[30px]">
             <svg
               width="18"
               height="19"

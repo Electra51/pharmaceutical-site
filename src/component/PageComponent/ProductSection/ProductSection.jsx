@@ -13,10 +13,8 @@ import useCategories from "../../../utils/useCategories";
 
 const ProductSection = () => {
   const swiperRef = useRef(null);
-  const [visibleCount, setVisibleCount] = useState(8);
   const { products, loading } = useProducts();
   const { categories } = useCategories();
-  console.log("categories", categories[0]?.name);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -25,9 +23,9 @@ const ProductSection = () => {
     selectedCategory === "All"
       ? products
       : products.filter((product) => product.category === selectedCategory);
-  // First 8 products
+
   const firstEightProducts = filteredProducts.slice(0, 8);
-  // Remaining products
+
   const remainingProducts = filteredProducts.slice(8);
 
   const handleShowMore = () => {
@@ -97,6 +95,7 @@ const ProductSection = () => {
               {categories.map((category, index) => {
                 return (
                   <SwiperSlide
+                    key={index}
                     className={`!h-[65px]  ${
                       category?.name == "Beauty and Hair Loss"
                         ? "!w-[210px]"
@@ -124,18 +123,7 @@ const ProductSection = () => {
             <IoArrowForward className="w-6 h-6 text-white" />
           </button>
         </div>
-        {/* <div className="">
-          {loading ? (
-            <Loader />
-          ) : (
-            <div className="product_sec gap-[30px]">
-              {filteredProducts.slice(0, visibleCount).map((product, index) => {
-                return <ProductCard product={product} key={index} />;
-              })}
-            </div>
-          )}
-        </div>
-      </div> */}
+
         <div>
           {loading ? (
             <Loader />

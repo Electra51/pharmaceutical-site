@@ -1,10 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import textureImg2 from "../../../assets/images/1k_Dissolve_Noise_Texture1.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import starSVG from "../../../assets/images/Star.svg";
-import clientSVG from "../../../assets/images/client.png";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "./last.css";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";

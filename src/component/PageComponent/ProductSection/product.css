@@ -29,11 +29,8 @@
   transform: translate3d(0, 0, 0);
   z-index: 10;
   display: none !important;
-  /* left: 10px; */
 }
 
-/* .product_swiper_container {
-} */
 @media only screen and (min-width: 357px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .product_sec {
     display: grid;

@@ -26,7 +26,6 @@ const CategorySection = () => {
                 gutterBreakpoints={{ 350: "12px", 750: "16px", 900: "30px" }}>
                 <Masonry>
                   {categories.map((category, i) => {
-                    console.log("ca", category);
                     return (
                       <div
                         key={i}

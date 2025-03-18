@@ -5,7 +5,6 @@ const Dropdown = ({ options, type }) => {
     <ul className="absolute left-0 top-8 mt-2 w-69 bg-white rounded-lg shadow-lg z-10">
       {options.length > 0 ? (
         options.slice(0, 6).map((option, index) => {
-          console.log("cate", option);
           return (
             <li
               className={`text-black py-1 hover:bg-[#E1C06E] font-neueMontreal font-normal px-2 cursor-pointer border-0 border-b border-gray-200 ${

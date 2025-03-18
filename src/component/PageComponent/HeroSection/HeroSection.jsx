@@ -6,7 +6,7 @@ import useProducts from "../../../utils/useProducts";
 
 const HeroSection = () => {
   const { products, loading } = useProducts();
-  console.log("products", products);
+
   const [query, setQuery] = useState("");
   const [filteredItems, setFilteredItems] = useState(products);
 
@@ -24,7 +24,6 @@ const HeroSection = () => {
     }
   };
 
-  console.log("filteredItems", filteredItems);
   return (
     <div className="hero_section">
       <div className="container">
@@ -48,7 +47,7 @@ const HeroSection = () => {
               className="search_input placeholder:text-white"
               placeholder="Search by product/treatment"
               value={query}
-              onChange={handleSearch} // Update the query on input change
+              onChange={handleSearch}
             />
             <div className="search_icon">
               <IoSearch className="text-2xl" />

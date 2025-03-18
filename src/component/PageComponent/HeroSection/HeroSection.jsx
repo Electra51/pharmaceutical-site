@@ -7,21 +7,20 @@ import useProducts from "../../../utils/useProducts";
 const HeroSection = () => {
   const { products, loading } = useProducts();
   console.log("products", products);
-  const [query, setQuery] = useState(""); // To store the search query
-  const [filteredItems, setFilteredItems] = useState(products); // To store filtered items based on query
+  const [query, setQuery] = useState("");
+  const [filteredItems, setFilteredItems] = useState(products);
 
   const handleSearch = (e) => {
     const searchQuery = e.target.value;
     setQuery(searchQuery);
 
-    // Filter items based on the query
     if (searchQuery.trim()) {
       const filtered = products.filter((item) =>
         item.product_name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setFilteredItems(filtered);
     } else {
-      setFilteredItems(""); // Reset if search query is empty
+      setFilteredItems("");
     }
   };
 

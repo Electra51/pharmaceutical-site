@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   return (
-    <div className="w-[270px] h-[262px] bg-[#31418C4D] rounded-[12px] relative">
+    <div className="w-[370px] md:w-[270px] lg:w-[270px] h-[262px] bg-[#31418C4D] rounded-[12px] relative">
       <div className="flex justify-center items-center gap-[24px] mt-6">
         {product?.status == "a" ? (
           ""
@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
           {product?.product_name}
         </p>
       </div>
-      <div className="w-[270px] h-[65px] rounded-b-[12px] absolute bottom-0 left-0 bg-[#1F1F1F4D]">
+      <div className="w-[370px] md:w-[270px] lg:w-[270px] h-[65px] rounded-b-[12px] absolute bottom-0 left-0 bg-[#1F1F1F4D]">
         <p className="text-[12px] font-normal font-SofiaPro text-white w-[162px] flex items-center h-[65px] pl-[8px]">
           {" "}
           {product?.price}

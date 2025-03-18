@@ -22,7 +22,7 @@ const CategorySection = () => {
               <Loader />
             ) : (
               <ResponsiveMasonry
-                columnsCountBreakPoints={{ 375: 1, 500: 2, 600: 2, 900: 3 }}
+                columnsCountBreakPoints={{ 375: 1, 600: 2, 900: 3 }}
                 gutterBreakpoints={{ 350: "12px", 750: "16px", 900: "30px" }}>
                 <Masonry>
                   {categories.map((category, i) => {
@@ -30,7 +30,7 @@ const CategorySection = () => {
                     return (
                       <div
                         key={i}
-                        className="category-item w-[370px] relative mt-[15px]">
+                        className="mx-auto category-item w-[370px] relative mt-[15px]">
                         <p
                           className={`text-[36px] font-medium font-neueMontreal absolute top-[24px] z-10 left-[24px] ${
                             i === 3 || i === 4 || i === 5

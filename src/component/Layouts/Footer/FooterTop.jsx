@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterTop = () => {
   return (
-    <div className="pr-[30px] md:pr-[100px] lg:pr-[219px] flex lg:flex-row flex-col md:flex-col items-center gap-[70px] md:gap-[100px] lg:gap-[182px] mx-auto max-w-[400px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1200px]">
+    <div className="pr-[0px] md:pr-[100px] lg:pr-[219px] flex lg:flex-row flex-col md:flex-col items-center gap-[41px] md:gap-[100px] lg:gap-[182px] mx-auto max-w-[400px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1200px]">
       <div className="border-2 border-gray-400 lg:w-[413px] md:w-[413px] w-[360px] rounded-[20px]">
         <div
           className="lg:w-[413px] md:w-[413px] w-[360px] rounded-[20px] border py-[35px]"
@@ -18,7 +18,7 @@ const FooterTop = () => {
           <p className="px-[66px] text-[16px] font-neueMontreal text-center mt-[20px]">
             Keep up to date with our latest news & special offers.
           </p>
-          <div className="relative border mt-[28px] rounded-[8px] w-[333px] h-[60px] flex justify-start items-center mx-auto">
+          <div className="relative border mt-[28px] rounded-[8px] w-[300px] lg:w-[333px] h-[60px] flex justify-start items-center mx-auto">
             <input
               className="rounded-[8px] text-[16px] font-neueMontreal pl-[24px]"
               placeholder="enter your email"

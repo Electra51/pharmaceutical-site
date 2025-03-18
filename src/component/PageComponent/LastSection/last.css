@@ -18,54 +18,11 @@
 
 @media only screen and (min-width: 357px) and (max-width: 768px) {
   .last_section {
+    margin-top: -332px !important;
     min-height: 1100px;
     background-position: 60% top;
     background-size: 2300px;
-  }
-  .hero_headText {
-    font-size: 50px;
-  }
-  .hero_section {
-    padding-top: 300px;
-  }
-  .hero_btn span {
-    font-size: 17px;
-  }
-  .hero_headText {
-    font-size: 40px;
-  }
-  .hero_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto !important;
-  }
-  .search {
-    height: 55px;
-  }
-  .search_input {
-    padding-left: 60px;
-    font-size: 16px;
-  }
-  .search_icon {
-    left: 22px;
-    top: 15px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  .hero {
-    min-height: 1100px;
-    background-position: 60% top;
-    background-size: 2300px;
-  }
-  .hero_headText {
-    font-size: 60px;
-  }
-  .hero_headText span {
-    background: linear-gradient(180deg, #c1842d 0%, #ecc974 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-  }
 }

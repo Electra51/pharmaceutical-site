@@ -1,17 +1,9 @@
 import React from "react";
-import BGImg from "../../../assets/images/BG.png";
 import "./add.css";
 const AddSection = () => {
   return (
-    <div
-      className="!h-[812px] w-full mt-[160px] !z-10 !absolute add_section"
-      style={{
-        backgroundImage: `url(${BGImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}>
-      <div className="container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:justify-items-center !pt-[89px] gap-[40px] md:gap-0">
+    <div className="add_section">
+      <div className="container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:justify-items-center !pt-[51px] lg:!pt-[89px] gap-[40px] md:gap-0">
         <p className="text-[30px] md:text-[48px] lg:text-[58px] font-impact leading-[120%]w-[200px] md:w-[513px] lg:w-[524px]">
           100% Online, <br /> 100% Convenient
         </p>

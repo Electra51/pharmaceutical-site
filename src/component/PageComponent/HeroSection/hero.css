@@ -106,7 +106,7 @@
     font-size: 50px;
   }
   .hero_section {
-    padding-top: 300px;
+    padding-top: 256px;
   }
   .hero_btn span {
     font-size: 17px;
@@ -119,6 +119,9 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto !important;
+  }
+  .hero_search {
+    margin-top: 74px;
   }
   .search {
     height: 55px;

@@ -15,7 +15,7 @@ const LastSection = () => {
   return (
     <div className="last_section">
       <div>
-        <div className="container !pt-[820px] lg:!pt-[696px]">
+        <div className="container !pt-[736px] md:!pt-[820px] lg:!pt-[696px]">
           <SectionTitle
             paraText={"Hear What"}
             spanText={"Rizz"}

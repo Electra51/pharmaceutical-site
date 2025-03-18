@@ -39,7 +39,7 @@ const ProductSection = () => {
   };
 
   return (
-    <div className="mt-[153px] relative">
+    <div className="mt-[96px] md:mt-[96px] lg:mt-[153px] relative">
       <div className="container">
         <SectionTitle
           paraText={"Solutions for Your"}
@@ -153,18 +153,9 @@ const ProductSection = () => {
         </div>
       </div>
 
-      {/* <div className="mt-[50px] flex justify-center items-center gap-[32px]">
-        <div className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center">
-          <IoArrowBack className="text-[24px] text-black" />
-        </div>
-        <div className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center">
-          <IoArrowForward className="text-[24px] text-black" />
-        </div>
-      </div> */}
-      {/* Toggle Buttons */}
       <div className="mt-[50px] flex justify-center items-center gap-[32px]">
         {!showMore ? (
-          <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+          <div className="flex justify-center items-center gap-[32px]">
             <div className="w-[60px] h-[60px] rounded-full border border-[#E1C06E] flex justify-center items-center cursor-pointer">
               <IoArrowBack className="text-[24px] text-[#E1C06E]" />
             </div>
@@ -176,7 +167,7 @@ const ProductSection = () => {
             </button>
           </div>
         ) : (
-          <div className="mt-[50px] flex justify-center items-center gap-[32px]">
+          <div className="flex justify-center items-center gap-[32px]">
             <button
               onClick={handleShowLess}
               className="w-[60px] h-[60px] rounded-full bg-[#E1C06E] flex justify-center items-center cursor-pointer">

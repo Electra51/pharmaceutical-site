@@ -5,13 +5,17 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 812px;
+  margin-top: 160px;
+  z-index: 999;
+  width: 100%;
+  position: absolute;
 }
-/* .add_section {
-  background-image: url("../../../assets/images/BG.png");
-  background-size: contain;
-  background-position: center, 40% 10%;
-  background-origin: content-box, padding-box;
-} */
+@media only screen and (min-width: 357px) and (max-width: 768px) {
+  .add_section {
+    margin-top: 64px;
+    min-height: 412px;
+  }
+}
 
 @media only screen and (max-width: 480px) {
 }

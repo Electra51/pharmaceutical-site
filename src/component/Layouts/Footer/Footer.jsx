@@ -9,18 +9,18 @@ import FooterTop from "./FooterTop";
 const Footer = () => {
   return (
     <div
-      className="pt-[80px] mt-[160px] backdrop-blur-[50px] flex flex-col justify-center items-center"
+      className="pt-[80px] mt-[147px] lg:mt-[160px] backdrop-blur-[50px] flex flex-col justify-center items-center"
       style={{
         background:
           "linear-gradient(180deg, rgba(61, 85, 204, 0.7) 0%, rgba(31, 31, 31, 0.1) 100%)",
       }}>
       <FooterTop />
 
-      <div className="flex lg:flex-row flex-col md:flex-col justify-center items-center gap-[50px] md:gap-[70px] lg:gap-[270px]">
-        <div className="w-[186px] h-[107px] mx-auto lg:mx-auto mt-[74px]">
+      <div className="flex lg:flex-row flex-col md:flex-col justify-center items-center gap-[20px] md:gap-[70px] lg:gap-[270px]">
+        <div className="w-[186px] h-[75px] lg:h-[107px] mx-auto lg:mx-auto mt-[44px] lg:mt-[74px]">
           <img src={hipalogo} alt="" className="h-full w-full object-contain" />
         </div>
-        <div className="w-[365px] lg:w-[500px] h-[134px] mx-auto mt-[60px]">
+        <div className="w-[365px] lg:w-[500px] h-[134px] mx-auto mt-0 lg:mt-[60px]">
           <div className="gap-[12px] flex justify-center lg:justify-normal items-center">
             <div className="w-[36px] h-[36px] bg-[#434B76] rounded-full flex justify-center items-center">
               <FaFacebook className="text-white text-[16px]" />
@@ -29,7 +29,7 @@ const Footer = () => {
               <FaInstagram className="text-white text-[16px]" />
             </div>
           </div>
-          <div className="flex lg:flex-row flex-col justify-normal items-center gap-[22px] mt-[26px]">
+          <div className="flex lg:flex-row flex-col justify-normal items-center gap-[12px] lg:gap-[22px] mt-[26px]">
             <img src={certifiedLogo} alt="" />
             <p className="text-[16px] font-neueMontreal lg:text-start text-center">
               Copyright © 2024 Rizz Pharma All Right Reserved - Built by
